@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Plans — The Plumbing Department, Inc. [MOCKUP]</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --g50: #EAF3DE; --g100: #C0DD97; --g400: #639922;
+    --g600: #3B6D11; --g800: #27500A; --g900: #173404;
+    --bg-primary: #ffffff; --bg-secondary: #f5f5f3; --bg-tertiary: #eeede8;
+    --text-primary: #1a1a18; --text-secondary: #5f5e5a;
+    --border: rgba(0,0,0,.12); --border-med: rgba(0,0,0,.22);
+    --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: #1c1c1a; --bg-secondary: #252522; --bg-tertiary: #2e2e2b;
+      --text-primary: #f0efe8; --text-secondary: #a09e97;
+      --border: rgba(255,255,255,.1); --border-med: rgba(255,255,255,.2);
+    }
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-tertiary); color: var(--text-primary); font-size: 16px; line-height: 1.7; }
+
+  /* mockup badge */
+  .mockup-bar { background: #1a1a18; color: #f0efe8; font-size: 12px; text-align: center; padding: 8px; letter-spacing: .04em; }
+  .mockup-bar span { opacity: .55; }
+
+  /* nav */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 2rem; border-bottom: 1px solid var(--border); background: var(--bg-primary); }
+  .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .nav-logo em { color: var(--g600); font-style: normal; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a.active { color: var(--g600); font-weight: 500; }
+  .nav-phone { font-size: 14px; color: var(--g600); font-weight: 600; }
+  @media (max-width: 680px) { .nav-links { display: none; } }
+
+  /* hero */
+  .hero { background: var(--g800); padding: 5rem 2rem 4.5rem; text-align: center; }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,.12); color: rgba(255,255,255,.88); font-size: 11px; font-weight: 500; padding: 4px 16px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: .06em; text-transform: uppercase; }
+  .hero h1 { font-size: 48px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.1rem; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,.78); max-width: 500px; margin: 0 auto 2.25rem; line-height: 1.7; }
+  .hero-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-solid { background: var(--g400); color: #fff; border: none; padding: 12px 28px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,.88); border: 1.5px solid rgba(255,255,255,.35); padding: 12px 28px; border-radius: var(--radius-md); font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; }
+  @media (max-width: 580px) { .hero h1 { font-size: 30px; } }
+
+  /* sections */
+  .sec { max-width: 880px; margin: 0 auto; padding: 3.5rem 2rem; }
+  .sec-bg { background: var(--bg-secondary); }
+  .sec-h { margin-bottom: 2rem; }
+  .sec-h h2 { font-size: 26px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+  .sec-h p { font-size: 14px; color: var(--text-secondary); }
+  .sec-h.center { text-align: center; }
+
+  /* value props */
+  .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+  .vc { padding: 1.4rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg-primary); }
+  .vi { width: 38px; height: 38px; background: var(--g50); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  @media (prefers-color-scheme: dark) { .vi { background: #1a4008; } }
+  .vi svg { width: 18px; height: 18px; stroke: var(--g600); fill: none; stroke-width: 1.5; }
+  .vc h3 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 7px; }
+  .vc p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* pricing */
+  .pgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; }
+  .pc { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg-primary); padding: 1.6rem; position: relative; }
+  .pc.feat { border: 2.5px solid var(--g600); }
+  .pbadge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--g600); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: .04em; }
+  .plbl { font-size: 10px; font-weight: 600; color: var(--g600); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px; }
+  .pname { font-size: 21px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .pprice { font-size: 34px; font-weight: 700; color: var(--text-primary); line-height: 1.1; margin-bottom: 4px; }
+  .pprice span { font-size: 15px; color: var(--text-secondary); font-weight: 400; }
+  .pdesc { font-size: 12px; color: var(--text-secondary); margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); line-height: 1.6; }
+  .pf { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
+  .pf li { font-size: 13px; color: var(--text-primary); display: flex; gap: 8px; align-items: flex-start; line-height: 1.55; }
+  .ck { width: 16px; height: 16px; flex-shrink: 0; stroke: var(--g600); fill: none; stroke-width: 2.5; margin-top: 1px; }
+  .pcta { display: block; width: 100%; padding: 10px; border-radius: var(--radius-md); font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; text-align: center; }
+  .pcta.solid { background: var(--g600); color: #fff; border: none; }
+  .pcta.outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-med); }
+
+  /* roi */
+  .roi { background: var(--g50); border-radius: var(--radius-lg); padding: 1.2rem 1.4rem; display: flex; gap: 1rem; margin-top: 1.75rem; align-items: flex-start; }
+  @media (prefers-color-scheme: dark) { .roi { background: #1a4008; } }
+  .roi svg { width: 18px; height: 18px; stroke: var(--g600); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px; }
+  .roi p { font-size: 13px; color: var(--g800); line-height: 1.65; }
+  .roi p strong { color: var(--g800); }
+  @media (prefers-color-scheme: dark) { .roi p, .roi p strong { color: #C0DD97; } }
+
+  /* testimonials */
+  .tgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; }
+  .tc { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg-primary); padding: 1.3rem; }
+  .tstars { display: flex; gap: 2px; margin-bottom: 10px; }
+  .star { width: 13px; height: 13px; fill: var(--g400); }
+  .ttext { font-size: 13px; color: var(--text-primary); line-height: 1.7; margin-bottom: 12px; font-style: italic; }
+  .tauth { font-size: 11px; color: var(--text-secondary); font-weight: 600; }
+
+  /* faq */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+  .faq-a { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+  /* area pills */
+  .apills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { background: var(--g50); color: var(--g800); font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 20px; }
+  @media (prefers-color-scheme: dark) { .pill { background: #1a4008; color: #97C459; } }
+
+  /* footer cta */
+  .fcta { background: var(--g800); padding: 4.5rem 2rem; text-align: center; }
+  .fcta h2 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .fcta p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+  .fcta-addr { margin-top: 1.75rem; font-size: 12px; color: rgba(255,255,255,.38); }
+
+  /* footer */
+  .footer { background: #111; color: rgba(255,255,255,.4); font-size: 11px; text-align: center; padding: 1.25rem; }
+</style>
+</head>
+<body>
+
+<div class="mockup-bar">MOCKUP — The Plumbing Department, Inc. · Membership Page Redesign <span>· Prepared by The Main Sequence LLC</span></div>
+
+<nav class="nav">
+  <div class="nav-logo"><em>The Plumbing</em> Department, Inc.</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#" class="active">Memberships</a>
+    <a href="#">Pro Tips</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-phone">773-617-3686</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Serving Chicago homeowners since 1999</div>
+  <h1>Skip the surprise repair bills.</h1>
+  <p>An annual plumbing membership gives you a full home inspection, 10% off every service call, and the peace of mind that comes from knowing your home.</p>
+  <div class="hero-ctas">
+    <button class="btn-solid">View Membership Plans</button>
+    <button class="btn-ghost">Call 773-617-3686</button>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-h center">
+    <h2>What you get as a member</h2>
+    <p>Three benefits designed around how plumbing problems actually happen — before, during, and after the emergency.</p>
+  </div>
+  <div class="vgrid">
+    <div class="vc">
+      <div class="vi">
+        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+      </div>
+      <h3>Annual 65-point inspection</h3>
+      <p>A licensed plumber walks through your entire home, checks every fixture and system, and delivers a written report with recommendations.</p>
+    </div>
+    <div class="vc">
+      <div class="vi">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <h3>10% off every service call</h3>
+      <p>Members save automatically on every job — from a routine drain cleaning to a full water heater replacement. On a $1,500 repair, that's $150 back.</p>
+    </div>
+    <div class="vc">
+      <div class="vi">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>A plumber who knows your home</h3>
+      <p>As a member, you're a recognized customer with a service history. When something goes wrong, we're not starting from scratch — we know your house.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg">
+  <div class="sec">
+    <div class="sec-h center">
+      <h2>Choose your plan</h2>
+      <p>Options for single-family homeowners and condo owners. Benefits start the day you join.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pc">
+        <div class="plbl">Single family home</div>
+        <div class="pname">Silver</div>
+        <div class="pprice">$300 <span>/ year</span></div>
+        <div class="pdesc">Essential protection for homeowners focused on maintenance and savings.</div>
+        <ul class="pf">
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Annual 65-point home plumbing inspection</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Written report with recommendations</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10% off all services, all year</li>
+        </ul>
+        <button class="pcta outline">Get Silver</button>
+      </div>
+      <div class="pc feat">
+        <div class="pbadge">Most popular</div>
+        <div class="plbl">Single family home</div>
+        <div class="pname">Gold</div>
+        <div class="pprice">$550 <span>/ year</span></div>
+        <div class="pdesc">Everything in Silver, plus a sewer scope with recording — a $300 value on its own.</div>
+        <ul class="pf">
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Annual 65-point home plumbing inspection</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Written report with recommendations</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10% off all services, all year</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sewer scope with video recording — catch underground problems before they become emergencies</li>
+        </ul>
+        <button class="pcta solid">Get Gold</button>
+      </div>
+      <div class="pc">
+        <div class="plbl">Condo owners</div>
+        <div class="pname">UnitCare Pro</div>
+        <div class="pprice">$250 <span>/ year</span></div>
+        <div class="pdesc">Designed for condo owners navigating shared building systems.</div>
+        <ul class="pf">
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Annual 65-point unit inspection</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Help identifying common building equipment and unit shutoffs</li>
+          <li><svg class="ck" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10% off all services, all year</li>
+        </ul>
+        <button class="pcta outline">Get UnitCare Pro</button>
+      </div>
+    </div>
+    <div class="roi">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Is the Gold plan worth it?</strong> A standalone sewer scope in Chicago typically runs $250–$350. Gold includes that plus the full Silver benefits for just $250 more — making it the better value for most single-family homeowners, especially those with older homes or trees near the sewer line.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-h">
+    <h2>What Chicago homeowners say</h2>
+  </div>
+  <div class="tgrid">
+    <div class="tc">
+      <div class="tstars">
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="ttext">"We have an old house with complicated plumbing and have worked with Jeff and his crew several times. You name it, this guy is amazing. Always friendly, helpful, tidy, and efficient."</div>
+      <div class="tauth">Alyx S. — Chicago homeowner</div>
+    </div>
+    <div class="tc">
+      <div class="tstars">
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="ttext">"I own 6 rental properties in Chicago and Jeff's team has done work at 4 of them. Straightforward communication and advice. I totally trust them and highly recommend the company."</div>
+      <div class="tauth">Mary M. — Chicago landlord</div>
+    </div>
+    <div class="tc">
+      <div class="tstars">
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="ttext">"Everything about using them is a positive experience — I've used them three times. Ease of scheduling, they arrive when expected, knowledgeable and capable. I would recommend without hesitation."</div>
+      <div class="tauth">Karolyn L. — Chicago homeowner</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg">
+  <div class="sec">
+    <div class="sec-h">
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Who benefits most from a membership?</div>
+        <div class="faq-a">Any homeowner who wants to stay ahead of plumbing problems rather than react to them. That includes people who just purchased a home and want to understand what they've got, longtime owners focused on maintenance, and landlords managing multiple properties. The 10% discount applies to every service call — members with even one or two service needs per year typically recoup the cost of the membership.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the 65-point inspection cover?</div>
+        <div class="faq-a">A licensed plumber walks through your entire home with you and visually inspects every plumbing element: bathroom faucets, tubs, showers, and toilets; kitchen sinks and dishwasher connections; garbage disposals; laundry hookups; exterior hose bibs; sump and ejector pumps; and water heaters. We answer your questions as we go, and at the end we provide a written report with any recommendations — so you leave with a clear picture of your home's plumbing health.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I buy memberships for multiple properties?</div>
+        <div class="faq-a">Yes. Each membership applies to a single address. If you'd like coverage across multiple properties — a second home, or a rental portfolio — you can purchase individual memberships for each. Many of our landlord clients do exactly this.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">When do my benefits start?</div>
+        <div class="faq-a">Immediately. Your 10% discount is active the moment you purchase and applies to any service call — including the same day you sign up.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I sign up?</div>
+        <div class="faq-a">Call our office at 773-617-3686, Monday through Friday, 7am–4pm. Our plumbers can also set you up on-site during a service visit if you'd like to get started right away.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-h">
+    <h2>Serving neighborhoods across Chicago</h2>
+    <p>We provide memberships and plumbing services throughout the city, including:</p>
+  </div>
+  <div class="apills">
+    <span class="pill">Lincoln Park</span>
+    <span class="pill">Lakeview</span>
+    <span class="pill">Logan Square</span>
+    <span class="pill">Bucktown</span>
+    <span class="pill">Wicker Park</span>
+    <span class="pill">Gold Coast</span>
+    <span class="pill">Near North</span>
+    <span class="pill">Near West Side</span>
+    <span class="pill">South Loop</span>
+    <span class="pill">Hyde Park</span>
+    <span class="pill">Uptown</span>
+    <span class="pill">Ravenswood</span>
+    <span class="pill">Andersonville</span>
+    <span class="pill">Rogers Park</span>
+    <span class="pill">Jefferson Park</span>
+    <span class="pill">Edgebrook</span>
+    <span class="pill">Albany Park</span>
+    <span class="pill">Sauganash</span>
+  </div>
+</div>
+
+<div class="fcta">
+  <h2>Ready to protect your home?</h2>
+  <p>Join Chicago homeowners who've stopped waiting for something to go wrong. Benefits start the day you sign up.</p>
+  <div class="hero-ctas">
+    <button class="btn-solid" style="padding:14px 36px;font-size:16px;">View Plans</button>
+    <button class="btn-ghost">Call 773-617-3686</button>
+  </div>
+  <div class="fcta-addr">1511 N. Artesian Ave., Chicago IL 60622 &nbsp;·&nbsp; Mon–Fri 7am–4pm</div>
+</div>
+
+<div class="footer">© 2025 The Plumbing Department, Inc. — Mockup prepared by The Main Sequence LLC. Not for distribution.</div>
+
+</body>
+</html>
