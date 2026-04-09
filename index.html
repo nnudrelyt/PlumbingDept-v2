@@ -122,11 +122,18 @@
   .fcta-addr { margin-top: 1.5rem; font-size: 12px; color: rgba(255,255,255,.6); }
 
   /* footer */
-  .footer { background: var(--navy); color: rgba(255,255,255,.88); padding: 2.5rem 2rem 1.5rem; }
+  .footer { background: var(--navy); color: rgba(255,255,255,.88); padding: 3rem 2rem; }
   .footer-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
-  .footer-brand { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-  .footer-details { font-size: 12px; color: var(--orange); line-height: 2; }
-  .footer-copy { max-width: 900px; margin: 1.5rem auto 0; border-top: 1px solid rgba(255,255,255,.1); padding-top: 1rem; font-size: 11px; color: rgba(255,255,255,.35); text-align: center; }
+  .footer-brand { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 14px; }
+  .footer-details { font-size: 13px; color: var(--orange); line-height: 2; font-weight: 600; }
+  .footer-social-heading { font-size: 13px; color: var(--orange); font-weight: 600; margin-bottom: 16px; max-width: 280px; line-height: 1.5; }
+  .footer-icons { display: flex; gap: 10px; }
+  .social-icon { width: 42px; height: 42px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; text-decoration: none; }
+  .social-icon.fb { background: #1877f2; }
+  .social-icon.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .social-icon.gg { background: #fff; color: #4285f4; font-weight: 800; }
+  .footer-copy { background: #000; color: rgba(255,255,255,.5); font-size: 12px; padding: 1rem 2rem; }
+  .footer-copy-inner { max-width: 900px; margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -339,13 +346,25 @@
       <div class="footer-brand">The Plumbing Department Inc.</div>
       <div class="footer-details">
         1511 N. Artesian Ave., Chicago IL 60622<br>
-        Monday–Friday: 7am – 4pm<br>
+        Monday–Friday; 7am – 4pm<br>
         773-617-3686
       </div>
     </div>
+    <div>
+      <div class="footer-social-heading">Follow us on social media for pro tips, discounts, and all the latest news!</div>
+      <div class="footer-icons">
+        <a href="#" class="social-icon fb">f</a>
+        <a href="#" class="social-icon ig">&#128247;</a>
+        <a href="#" class="social-icon gg">G</a>
+      </div>
+    </div>
   </div>
-  <div class="footer-copy">© 2025 The Plumbing Department, Inc. — Mockup prepared by The Main Sequence LLC. Not for distribution.</div>
 </footer>
+<div class="footer-copy">
+  <div class="footer-copy-inner">
+    © 2026 The Plumbing Department, Inc.<br>All rights reserved.
+  </div>
+</div>
 
 </body>
 </html>
