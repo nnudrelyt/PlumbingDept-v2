@@ -82,6 +82,14 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 .col2      { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 .col2-wide { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
 
+/* ── value prop cards ── */
+.vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; }
+.vc { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg-primary); }
+.vi { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.vi-chevron { color: var(--orange); font-size: 20px; font-weight: 900; line-height: 1; }
+.vc h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.vc p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
 /* ── trust list ── */
 .trust-list { list-style: none; display: flex; flex-direction: column; gap: 1.75rem; }
 .trust-list li { display: flex; gap: 14px; align-items: flex-start; }
@@ -201,10 +209,10 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
   </div>
 </div>
 
-<!-- ABOUT CONTENT -->
+<!-- ABOUT CONTENT + ONLY THE BEST -->
 <div class="sec-white">
   <div class="sec">
-    <div class="col2">
+    <div class="col2" style="margin-bottom:2.5rem;">
       <div>
         <h2 style="font-size:26px;font-weight:800;margin-bottom:1.1rem;">Chicago's Trusted Plumbing Contractor</h2>
         <p style="margin-bottom:1.1rem;">When evaluating your plumbing needs we take your current issues into consideration and try to resolve them in the best, most cost-effective way. We also know that sometimes spending a little bit more upfront will save you from multiple call-backs, and we focus on long-term rather than short-term solutions.</p>
@@ -214,45 +222,21 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
         <div class="photo-ph" style="height:220px;">[ Photo ]</div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ONLY THE BEST -->
-<div class="sec-gray">
-  <div class="sec">
-    <div class="col2-wide">
-      <div>
-        <div class="sec-h">
-          <h2>Only the Best</h2>
-          <p>Three commitments that define every job we take.</p>
-        </div>
-        <ul class="trust-list">
-          <li>
-            <span class="trust-chev">»</span>
-            <div>
-              <h4>Fully Licensed and Insured</h4>
-              <p>All our plumbers are fully qualified to assist you with your plumbing needs ranging from fixture service and replacement to sewer work and beyond.</p>
-            </div>
-          </li>
-          <li>
-            <span class="trust-chev">»</span>
-            <div>
-              <h4>The Highest Quality Parts and Fixtures</h4>
-              <p>We focus on long-term solutions for your home, which means using high-quality parts that last. We will always work with you to match your home's aesthetic while making sure you get a product you can use for years.</p>
-            </div>
-          </li>
-          <li>
-            <span class="trust-chev">»</span>
-            <div>
-              <h4>Clean Workers / Clean Work</h4>
-              <p>We care about what goes in your home — and that includes us. From shoe covers to plastic coverings, we protect your home from unnecessary dirt and damage during our work.</p>
-            </div>
-          </li>
-        </ul>
+    <div class="vgrid">
+      <div class="vc">
+        <div class="vi"><span class="vi-chevron">»</span></div>
+        <h3>Fully Licensed and Insured</h3>
+        <p>All our plumbers are fully qualified to assist you with your plumbing needs ranging from fixture service and replacement to sewer work and beyond.</p>
       </div>
-      <div style="display:grid;gap:1rem;">
-        <div class="photo-ph" style="height:260px;">[ Photo ]</div>
-        <div class="photo-ph" style="height:180px;">[ Photo ]</div>
+      <div class="vc">
+        <div class="vi"><span class="vi-chevron">»</span></div>
+        <h3>The Highest Quality Parts and Fixtures</h3>
+        <p>We focus on long-term solutions for your home, which means using high-quality parts that last. We will always work with you to match your home's aesthetic while making sure you get a product you can use for years.</p>
+      </div>
+      <div class="vc">
+        <div class="vi"><span class="vi-chevron">»</span></div>
+        <h3>Clean Workers / Clean Work</h3>
+        <p>We care about what goes in your home — and that includes us. From shoe covers to plastic coverings, we protect your home from unnecessary dirt and damage during our work.</p>
       </div>
     </div>
   </div>
