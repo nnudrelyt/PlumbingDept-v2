@@ -78,9 +78,8 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 .sec-white { background: var(--bg-primary); }
 .sec-gray  { background: var(--bg-secondary); }
 
-/* ── 2-col layouts ── */
-.col2      { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.col2-wide { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
+/* ── 2-col layout ── */
+.col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 
 /* ── value prop cards ── */
 .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; }
@@ -90,16 +89,8 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 .vc h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
 .vc p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
-/* ── trust list ── */
-.trust-list { list-style: none; display: flex; flex-direction: column; gap: 1.75rem; }
-.trust-list li { display: flex; gap: 14px; align-items: flex-start; }
-.trust-chev { color: var(--orange); font-size: 20px; font-weight: 900; line-height: 1.2; flex-shrink: 0; }
-.trust-list h4 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
-.trust-list p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
-
-/* ── photo placeholders ── */
+/* ── photo placeholder ── */
 .photo-ph { background: #d8d8d8; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 13px; letter-spacing: .05em; }
-.photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
 
 /* ── testimonials ── */
 .tgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
@@ -212,9 +203,12 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 <!-- ABOUT CONTENT + ONLY THE BEST -->
 <div class="sec-white">
   <div class="sec">
+    <div class="sec-h">
+      <h2>Chicago's Trusted Plumbing Contractor</h2>
+      <p>Providing solutions for all your plumbing and sewer needs since 1999.</p>
+    </div>
     <div class="col2" style="margin-bottom:2.5rem;">
       <div>
-        <h2 style="font-size:26px;font-weight:800;margin-bottom:1.1rem;">Chicago's Trusted Plumbing Contractor</h2>
         <p style="margin-bottom:1.1rem;">When evaluating your plumbing needs we take your current issues into consideration and try to resolve them in the best, most cost-effective way. We also know that sometimes spending a little bit more upfront will save you from multiple call-backs, and we focus on long-term rather than short-term solutions.</p>
         <p>We've worked with multiple plumbing professionals across the spectrum, from those that specialize in Chicago vintage piping, fixtures, and systems to those that work with modern, high-efficiency products such as tankless water heaters and 90-plus tank-style water heaters.</p>
       </div>
