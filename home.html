@@ -25,7 +25,7 @@
 }
 body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-secondary); color: var(--text-primary); font-size: 14px; line-height: 1.7em; -webkit-font-smoothing: antialiased; }
 
-/* mockup badge */
+/* ── mockup badge ── */
 .mockup-bar { background: #222; color: rgba(255,255,255,.75); font-size: 11px; text-align: center; padding: 7px; letter-spacing: .05em; text-transform: uppercase; }
 
 /* ── nav ── */
@@ -59,18 +59,19 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 
 /* ── sections ── */
 .sec { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem; }
+.sec.sec-tight { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 .sec-white { background: var(--bg-primary); }
 .sec-gray  { background: var(--bg-secondary); }
 
 /* ── 2-col layouts ── */
-.col2   { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.col2      { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 .col2-wide { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
 @media (max-width: 820px) { .col2, .col2-wide { grid-template-columns: 1fr; gap: 2rem; } }
 
-/* ── trust list (chevron bullets) ── */
+/* ── trust list ── */
 .trust-list { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
 .trust-list li { display: flex; gap: 14px; align-items: flex-start; }
-.trust-chev { color: var(--orange-dark); font-size: 20px; font-weight: 900; line-height: 1.2; flex-shrink: 0; }
+.trust-chev { color: var(--orange); font-size: 20px; font-weight: 900; line-height: 1.2; flex-shrink: 0; }
 .trust-list h4 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .trust-list p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
@@ -91,6 +92,7 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 
 /* ── orange headline band ── */
 .orange-band { background: var(--orange); padding: 3.5rem 2rem; text-align: center; }
+.orange-band-inner { max-width: 1100px; margin: 0 auto; }
 .orange-band h2 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: .75rem; }
 .orange-band p { font-size: 15px; color: rgba(255,255,255,.9); max-width: 640px; margin: 0 auto; line-height: 1.7; }
 .orange-band p::after { content: ''; display: block; width: 40px; height: 2px; background: rgba(255,255,255,.45); margin: 14px auto 0; }
@@ -122,9 +124,9 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 .ttext { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; font-style: italic; }
 .tauth { font-size: 12px; color: var(--navy); font-weight: 700; }
 
-/* ── neighborhoods ── */
-.neighborhood-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px 16px; text-align: center; }
-.neighborhood-grid span { font-size: 14px; color: var(--text-secondary); padding: 4px 0; }
+/* ── area pills ── */
+.apills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { background: var(--navy); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 16px; border-radius: 2px; }
 
 /* ── footer cta ── */
 .fcta { background: var(--orange); padding: 4rem 2rem; text-align: center; }
@@ -133,10 +135,12 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 .fcta .btn-solid { background: var(--navy); padding: 14px 36px; font-size: 15px; }
 .fcta .btn-solid:hover { background: var(--navy-light); }
 .fcta .btn-ghost { padding: 14px 36px; font-size: 15px; border-color: rgba(255,255,255,.6); }
+.fcta-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .fcta-addr { margin-top: 1.5rem; font-size: 12px; color: rgba(255,255,255,.6); }
 
 /* ── footer ── */
 .footer { background: var(--navy); color: rgba(255,255,255,.88); padding: 3rem 2rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.footer-inner { display: contents; }
 .footer-brand { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 14px; }
 .footer-details { font-size: 13px; color: #ffffff; line-height: 2; font-weight: 600; }
 .footer-social-heading { font-size: 13px; color: #ffffff; font-weight: 600; margin-bottom: 16px; max-width: 340px; line-height: 1.5; }
@@ -146,6 +150,7 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 .social-icon.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); font-size: 13px; }
 .social-icon.gg { background: #4285f4; }
 .footer-copy { background: #000; color: rgba(255,255,255,.5); font-size: 12px; padding: 1rem 2rem; }
+.footer-copy-inner { width: 100%; }
 
 /* ── responsive ── */
 @media (max-width: 768px) {
@@ -154,7 +159,7 @@ textarea.form-field { resize: vertical; min-height: 80px; }
   .hero p { font-size: 15px; }
   .sec-h h2 { font-size: clamp(20px, 5.5vw, 26px); }
   .btn-solid, .btn-ghost { width: 100%; text-align: center; }
-  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas, .fcta-ctas { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -196,8 +201,8 @@ textarea.form-field { resize: vertical; min-height: 80px; }
     <div class="col2-wide">
       <div>
         <div class="sec-h">
-          <h2>A Plumbing Contractor in Chicago<br>That You Can Trust</h2>
-          <p>When you need a plumber, you need one you can trust — fast. The Plumbing Department has been serving Chicago homes and businesses for over 25 years, and we've built our reputation on three things: showing up when we say we will, communicating clearly every step of the way, and doing the job right the first time. From a leaky faucet to a full sewer line repair, our licensed technicians bring the same level of care to every call.</p>
+          <h2>A Plumbing Contractor in Chicago That You Can Trust</h2>
+          <p>When you need a plumber, you need one you can trust — fast. The Plumbing Department has been serving Chicago homes and businesses for over 25 years, and we've built our reputation on three things: showing up when we say we will, communicating clearly every step of the way, and doing the job right the first time.</p>
         </div>
         <ul class="trust-list">
           <li>
@@ -250,13 +255,15 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 
 <!-- SERVICES HEADLINE BAND -->
 <div class="orange-band">
-  <h2>Professional Plumbing &amp; Sewer Services — Done Right.</h2>
-  <p>Looking for a local plumber who genuinely cares? We show up on time, use quality parts, and treat your home like our own.</p>
+  <div class="orange-band-inner">
+    <h2>Professional Plumbing &amp; Sewer Services — Done Right.</h2>
+    <p>Looking for a local plumber who genuinely cares? We show up on time, use quality parts, and treat your home like our own.</p>
+  </div>
 </div>
 
 <!-- SERVICES GRID -->
 <div class="sec-white">
-  <div class="sec" style="padding-top:2.5rem;padding-bottom:2.5rem;">
+  <div class="sec sec-tight">
     <div class="sgrid">
       <div class="svc-item">
         <div class="svc-icon"><i class="bi bi-arrow-up-circle"></i></div>
@@ -339,31 +346,31 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 <div class="sec-white">
   <div class="sec">
     <div class="sec-h center">
-      <h2>Residential and Commercial Plumbing and Sewer Services for Chicago Residents</h2>
-      <p>When it comes to plumbing services in Chicago, you can always place your trust in our professional team. The Plumbing Department is proud to assist home and business owners across Chicago, including the following locations:</p>
+      <h2>Serving Neighborhoods Across Chicago</h2>
+      <p>Residential and commercial plumbing services throughout the city.</p>
     </div>
-    <div class="neighborhood-grid">
-      <span>Bucktown</span>
-      <span>Old Irving</span>
-      <span>Lakeview</span>
-      <span>Boystown</span>
-      <span>Lincoln Park</span>
-      <span>Ravenswood</span>
-      <span>Logan Square</span>
-      <span>Rodgers Park</span>
-      <span>Near North</span>
-      <span>Uptown</span>
-      <span>Near West</span>
-      <span>Sauganash</span>
-      <span>South Loop</span>
-      <span>Hyde Park</span>
-      <span>Albany Park</span>
-      <span>Forest Glen</span>
-      <span>Edgebrook</span>
-      <span>Gold Coast</span>
-      <span>Jefferson Park</span>
-      <span>Harwood Heights</span>
-      <span>Andersonville</span>
+    <div class="apills" style="justify-content:center;">
+      <span class="pill">Bucktown</span>
+      <span class="pill">Old Irving</span>
+      <span class="pill">Lakeview</span>
+      <span class="pill">Boystown</span>
+      <span class="pill">Lincoln Park</span>
+      <span class="pill">Ravenswood</span>
+      <span class="pill">Logan Square</span>
+      <span class="pill">Rodgers Park</span>
+      <span class="pill">Near North</span>
+      <span class="pill">Uptown</span>
+      <span class="pill">Near West</span>
+      <span class="pill">Sauganash</span>
+      <span class="pill">South Loop</span>
+      <span class="pill">Hyde Park</span>
+      <span class="pill">Albany Park</span>
+      <span class="pill">Forest Glen</span>
+      <span class="pill">Edgebrook</span>
+      <span class="pill">Gold Coast</span>
+      <span class="pill">Jefferson Park</span>
+      <span class="pill">Harwood Heights</span>
+      <span class="pill">Andersonville</span>
     </div>
   </div>
 </div>
@@ -372,7 +379,7 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 <div class="fcta">
   <h2>Ready to Schedule Service?</h2>
   <p>Chicago's trusted plumbing team is standing by. Same-day responses during business hours.</p>
-  <div class="hero-ctas">
+  <div class="fcta-ctas">
     <a href="#contact" class="btn-solid">Get a Free Estimate</a>
     <a href="tel:7736173686" class="btn-ghost">Call 773-617-3686</a>
   </div>
@@ -381,25 +388,29 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div>
-    <div class="footer-brand">The Plumbing Department Inc.</div>
-    <div class="footer-details">
-      1511 N. Artesian Ave., Chicago IL 60622<br>
-      Monday–Friday; 7am – 4pm<br>
-      773-617-3686
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">The Plumbing Department Inc.</div>
+      <div class="footer-details">
+        1511 N. Artesian Ave., Chicago IL 60622<br>
+        Monday–Friday; 7am – 4pm<br>
+        773-617-3686
+      </div>
     </div>
-  </div>
-  <div>
-    <div class="footer-social-heading">Follow us on social media for pro tips, discounts, and all the latest news!</div>
-    <div class="footer-icons">
-      <a href="#" class="social-icon fb">f</a>
-      <a href="#" class="social-icon ig">ig</a>
-      <a href="#" class="social-icon gg">G</a>
+    <div>
+      <div class="footer-social-heading">Follow us on social media for pro tips, discounts, and all the latest news!</div>
+      <div class="footer-icons">
+        <a href="#" class="social-icon fb">f</a>
+        <a href="#" class="social-icon ig">ig</a>
+        <a href="#" class="social-icon gg">G</a>
+      </div>
     </div>
   </div>
 </footer>
 <div class="footer-copy">
-  © 2026 The Plumbing Department, Inc.<br>All rights reserved.
+  <div class="footer-copy-inner">
+    © 2026 The Plumbing Department, Inc.<br>All rights reserved.
+  </div>
 </div>
 
 </body>
