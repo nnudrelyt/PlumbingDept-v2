@@ -102,10 +102,11 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 .tauth { font-size: 12px; color: var(--navy); font-weight: 700; }
 
 /* ── pull quote ── */
-.pullquote { background: var(--bg-secondary); padding: 4rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.pullquote blockquote { font-size: 22px; font-weight: 700; font-style: italic; color: var(--text-primary); max-width: 700px; margin: 0 auto 1rem; line-height: 1.5; }
-.pullquote blockquote strong { color: var(--navy); font-style: normal; }
-.pullquote cite { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .12em; font-style: normal; font-weight: 700; }
+.pullquote { background: var(--bg-secondary); padding: 4rem 2rem; }
+.pullquote-card { background: #1e4f63; padding: 6.4rem 3rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+.pullquote blockquote { font-size: 22px; font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 1rem; line-height: 1.5; }
+.pullquote blockquote strong { color: var(--gold); }
+.pullquote cite { font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .12em; font-style: normal; font-weight: 700; }
 
 /* ── footer cta band ── */
 .fcta { background: var(--orange); padding: 4rem 2rem; text-align: center; }
@@ -203,12 +204,9 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 <!-- ABOUT CONTENT -->
 <div class="sec-white">
   <div class="sec">
-    <div class="sec-h center">
-      <h2>About The Plumbing Department</h2>
-      <p>Providing solutions for all your plumbing and sewer needs since 1999.</p>
-    </div>
     <div class="col2">
       <div>
+        <h2 style="font-size:26px;font-weight:800;margin-bottom:1.1rem;">Chicago's Trusted Plumbing Contractor</h2>
         <p style="margin-bottom:1.1rem;">When evaluating your plumbing needs we take your current issues into consideration and try to resolve them in the best, most cost-effective way. We also know that sometimes spending a little bit more upfront will save you from multiple call-backs, and we focus on long-term rather than short-term solutions.</p>
         <p>We've worked with multiple plumbing professionals across the spectrum, from those that specialize in Chicago vintage piping, fixtures, and systems to those that work with modern, high-efficiency products such as tankless water heaters and 90-plus tank-style water heaters.</p>
       </div>
@@ -262,8 +260,10 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 
 <!-- PULL QUOTE -->
 <div class="pullquote">
-  <blockquote>"If I had my life to live over again, I'd be a <strong>plumber.</strong>"</blockquote>
-  <cite>Albert Einstein</cite>
+  <div class="pullquote-card">
+    <blockquote>"If I had my life to live over again, I'd be a <strong>plumber.</strong>"</blockquote>
+    <cite>Albert Einstein</cite>
+  </div>
 </div>
 
 <!-- TESTIMONIALS -->
