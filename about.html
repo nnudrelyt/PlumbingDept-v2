@@ -57,8 +57,11 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
   background: linear-gradient(rgba(13,47,62,.82), rgba(13,47,62,.82)),
     url('https://plumbingdept.com/wp-content/uploads/2021/01/plumbing-department-truck.jpg') center/cover no-repeat;
   padding: 5.5rem 2rem 5rem;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
 }
-.page-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: center; }
+.page-hero-inner { max-width: 1100px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: center; }
 .page-hero-content { display: flex; align-items: stretch; }
 .page-hero-bar { width: 5px; background: var(--orange); border-radius: 2px; flex-shrink: 0; margin-right: 1.5rem; }
 .page-hero h1 { font-size: 38px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: .75rem; }
@@ -102,7 +105,7 @@ body { font-family: 'Open Sans', Arial, sans-serif; background: var(--bg-seconda
 
 /* ── pull quote ── */
 .pullquote { background: var(--bg-primary); padding: 0 2rem; }
-.pullquote-card { background: #1e4f63; padding: 4rem 3rem; max-width: 1100px; margin: 0 auto; text-align: center; border-radius: 6px; }
+.pullquote-card { background: #1e4f63; padding: 4rem 3rem; max-width: 825px; margin: 0 auto; text-align: center; border-radius: 6px; }
 .pullquote blockquote { font-size: 22px; font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 1rem; line-height: 1.5; }
 .pullquote blockquote strong { color: var(--gold); }
 .pullquote cite { font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .12em; font-style: normal; font-weight: 700; }
