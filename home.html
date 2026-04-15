@@ -101,20 +101,10 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 .sgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .25rem 2rem; }
 .svc-item { display: flex; align-items: center; gap: 14px; padding: .875rem 0; border-bottom: 1px solid var(--border); }
 .svc-item:nth-last-child(-n+3) { border-bottom: none; }
-.svc-icon { width: 46px; height: 46px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 20px; flex-shrink: 0; }
+.svc-icon { width: 46px; height: 46px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 20px; flex-shrink: 0; }
 .svc-label { font-size: 14px; font-weight: 600; color: var(--text-primary); }
 @media (max-width: 720px) { .sgrid { grid-template-columns: repeat(2, 1fr); } .svc-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); } .svc-item:nth-last-child(-n+2) { border-bottom: none; } }
 @media (max-width: 440px)  { .sgrid { grid-template-columns: 1fr; } .svc-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); } .svc-item:last-child { border-bottom: none; } }
-
-/* ── split band ── */
-.split-band { display: grid; grid-template-columns: 1fr 1fr; }
-.split-orange { background: var(--orange); padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
-.split-white  { background: var(--bg-primary); padding: 3.5rem 3rem; }
-.trust-items { display: flex; flex-direction: column; gap: 2rem; }
-.trust-band-item { display: flex; align-items: center; gap: 14px; }
-.trust-band-chev { color: rgba(255,255,255,.55); font-size: 22px; font-weight: 900; line-height: 1; flex-shrink: 0; }
-.trust-band-text { font-size: 18px; font-weight: 700; color: #fff; line-height: 1.3; }
-@media (max-width: 768px) { .split-band { grid-template-columns: 1fr; } .split-orange, .split-white { padding: 2.5rem 1.5rem; } }
 
 /* ── testimonials ── */
 .tgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
@@ -262,7 +252,7 @@ textarea.form-field { resize: vertical; min-height: 80px; }
 </div>
 
 <!-- SERVICES GRID -->
-<div class="sec-white">
+<div class="sec-gray">
   <div class="sec sec-tight">
     <div class="sgrid">
       <div class="svc-item">
@@ -305,33 +295,22 @@ textarea.form-field { resize: vertical; min-height: 80px; }
   </div>
 </div>
 
-<!-- SPLIT BAND: TRUST PILLARS + TESTIMONIALS -->
-<div class="split-band">
-  <div class="split-orange">
-    <div class="trust-items">
-      <div class="trust-band-item">
-        <span class="trust-band-chev">»</span>
-        <span class="trust-band-text">Fully Licensed &amp; Insured</span>
-      </div>
-      <div class="trust-band-item">
-        <span class="trust-band-chev">»</span>
-        <span class="trust-band-text">Clean Workers, Clean Work</span>
-      </div>
-      <div class="trust-band-item">
-        <span class="trust-band-chev">»</span>
-        <span class="trust-band-text">Quality Parts &amp; Fixtures</span>
-      </div>
-    </div>
-  </div>
-  <div class="split-white">
+<!-- TESTIMONIALS -->
+<div class="sec-white">
+  <div class="sec">
     <div class="sec-h">
-      <h2>Client Testimonials</h2>
+      <h2>What Chicago homeowners say</h2>
     </div>
     <div class="tgrid">
       <div class="tc">
         <div class="tstars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
         <div class="ttext">"Jeff and his helper were FABULOUS. They were punctual, professional and reasonably priced. They cleaned up behind themselves. Did NOT leave a mess as other workmen have done in my home. I would DEFINITELY hire him again and would recommend him to others."</div>
         <div class="tauth">Barbara T.</div>
+      </div>
+      <div class="tc">
+        <div class="tstars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="ttext">"We have an old house with complicated plumbing and have worked with Jeff and his crew several times. You name it, this guy is amazing. Always friendly, helpful, tidy, and efficient."</div>
+        <div class="tauth">Alyx S. — Chicago homeowner</div>
       </div>
       <div class="tc">
         <div class="tstars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
